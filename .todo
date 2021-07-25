@@ -1,0 +1,10 @@
+DATABASE:
+DB_NAME => forum
+   Entity => users:
+      ✔ id INT PRIMARY KEY NOT NULL
+      ✔ pseudo VARCHAR(50)
+      ✔ firstname VARCHAR(100)
+      ✔ lastname VARCHAR(100)
+      ✔ password TEXT
+
+Utiliser "htmlspecialchars" pour éviter éviter l'injection SQL
