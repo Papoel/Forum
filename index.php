@@ -22,7 +22,9 @@ require 'controller/users/securityController.php';
    <br><br>
 
 <div class="container">
-   <h1>Bienvenue sur le Forum</h1>
+   <h1>
+      <?= $_SESSION['pseudo'] ?>, content de te revoir !
+   </h1>
 </div>
 
 </body>

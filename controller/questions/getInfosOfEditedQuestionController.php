@@ -17,10 +17,13 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
       $questionsInfos = $checkIfquestionExist->fetch();
       if ($questionsInfos['id_author'] == $_SESSION['id']) {
 
-         $question_title = $questionsInfos['title'];
+         $question_title       = $questionsInfos['title'];
          $question_description = $questionsInfos['description'];
-         $question_content = $questionsInfos['content'];
-         $question_date = $questionsInfos['date_publication'];
+         $question_content     = $questionsInfos['content'];
+
+   // Supprimer l'affichage des balises <br />
+         $question_description = str_replace('<br />', '', $question_description);
+         $question_content     = str_replace('<br />', '', $question_content);
 
       } else {
          $errorMsg = "Vous ne pouvez pas modifier cette question car nous n'en êtes pas l'auteur.";
