@@ -15,7 +15,7 @@ require('controller/questions/myQuestionsController.php');
    <div class="container">
       <div class="row row-cols-lg-auto g-0">
          <?php while ($question = $getAllMyQuestions->fetch()) { ?>
-            <div class="card me-1" style="width:18rem;">
+            <div class="card me-4 mt-4" style="width:18rem;">
                <h5 class="card-header text-center fw-bold text-teal">
                   <?= $question['title']; ?>
                </h5>
