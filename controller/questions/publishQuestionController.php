@@ -2,7 +2,7 @@
 session_start();
 require('models/database.php');
 
-var_dump($_SESSION['id'], $_SESSION['pseudo']);
+// var_dump($_SESSION['id'], $_SESSION['pseudo']);
 
 //Valider le formulaire
 if (isset($_POST['validate'])) {

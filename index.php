@@ -2,7 +2,7 @@
 // session_start();
 require 'controller/users/securityController.php';
 
-var_dump($_SESSION['id'], $_SESSION['pseudo']);
+// var_dump($_SESSION['id'], $_SESSION['pseudo']);
 
 /*
    $_SESSION['auth']      = true;
