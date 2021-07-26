@@ -25,7 +25,7 @@ require('controller/questions/myQuestionsController.php');
                   </p>
                   <div class="d-flex justify-content-around">
                      <a href="#" class="btn btn-primary">Lire</a>
-                     <a href="edit-question.php" class="btn btn-warning">Modifier</a>
+                     <a href="edit-question.php?id=<?= $question['id'];?>" class="btn btn-warning">Modifier</a>
                   </div>
                </div>
                <div class="card-footer d-flex justify-content-between">
