@@ -1,15 +1,6 @@
 <?php
-require 'controller/users/securityController.php';
-
-// var_dump($_SESSION['id'], $_SESSION['pseudo']);
-
-/*
-   $_SESSION['auth']      = true;
-   $_SESSION['id']        = $users_infos['id'];
-   $_SESSION['lastname']  = $users_infos['lastname'];
-   $_SESSION['firstname'] = $users_infos['firstname'];
-   $_SESSION['pseudo']    = $users_infos['pseudo'];
-*/
+session_start();
+require('controller/questions/showAllQuestionController.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +11,18 @@ require 'controller/users/securityController.php';
    <?php include 'includes/navbar.php'; ?>
    <br><br>
 
-<div class="container">
-   <h1>
-      <?= $_SESSION['pseudo'] ?>, content de te revoir !
-   </h1>
-</div>
+   <div class="container">
+      <form method="GET">
+         <div class="form-group row">
+            <div class="col-8">
+               <input placeholder="Rechercher une question" type="search" name="search" class="form-control">
+            </div>
+            <div class="col-4">
+               <button type="submit" class="btn btn-success">Rechercher</button>
+            </div>
+         </div>
+      </form>
+   </div>
 
 </body>
 

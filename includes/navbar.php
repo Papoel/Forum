@@ -1,6 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
    <div class="container-fluid">
-      <b><a class="navbar-brand" href="#">Forum Technisonic</a></b>
+      <b>
+         <a class="navbar-brand" href="#">
+            <?php
+            if (isset($_SESSION['auth'])) {
+            ?>
+               Forum Technisonic | <span class="text-warning"><?= $_SESSION['pseudo'] ?></span>
+            <?php
+            }
+            ?>
+         </a>
+      </b>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
       </button>
@@ -16,6 +26,7 @@
                <a class="nav-link" href="my-questions.php">Mes questions</a>
             </li>
          </ul>
+
          <?php
          if (isset($_SESSION['auth'])) {
          ?>
@@ -26,14 +37,12 @@
                </li>
                <!--  <ul class="navbar-nav ms-auto me-1"> -->
                <li class="nav-item">
-                  <a class="nav-link text-danger" href="controller/users/logoutController.php">Se déconnecter</a>
+                  <a class="nav-link text-danger h5" href="controller/users/logoutController.php">Se déconnecter</a>
                </li>
             </ul>
          <?php
          }
          ?>
-
-
       </div>
    </div>
 </nav>
