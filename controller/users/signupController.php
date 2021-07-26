@@ -2,7 +2,7 @@
 session_start();
 
 // Se connecter à la base de donnée
-require('models/database.php');
+require('controller/database.php');
 
 // Validation du formulaire
 if (isset($_POST['validate'])) {
@@ -29,21 +29,26 @@ if (isset($_POST['validate'])) {
          // Inserer l'utilisateur en base de donnée
          $insertUserOnWebsite = $db->prepare(
             'INSERT INTO users(pseudo, firstname, lastname, password) 
-            VALUES(?, ?, ?, ?)');
-            
-         $insertUserOnWebsite->execute(array(
-            $user_pseudo, 
-            $user_firstname, 
-            $user_lastname, 
-            $user_password)
+            VALUES(?, ?, ?, ?)'
+         );
+
+         $insertUserOnWebsite->execute(
+            array(
+               $user_pseudo,
+               $user_firstname,
+               $user_lastname,
+               $user_password
+            )
          );
 
          // Récupèrer les infos d'un utilisateur
          $getInfosOfUserReq = $db->prepare('SELECT id, pseudo, firstname, lastname FROM users WHERE firstname = ? AND lastname = ? AND pseudo = ?');
-         $getInfosOfUserReq->execute(array(
-            $user_firstname, 
-            $user_lastname, 
-            $user_pseudo)
+         $getInfosOfUserReq->execute(
+            array(
+               $user_firstname,
+               $user_lastname,
+               $user_pseudo
+            )
          );
 
          $usersInfo = $getInfosOfUserReq->fetch();
@@ -60,7 +65,6 @@ if (isset($_POST['validate'])) {
       } else {
          $errorMsg = "L'utilisateur existe dèja ...";
       }
-      
    } else {
       $errorMsg = 'Veuillez compléter tous les champs ...';
    }

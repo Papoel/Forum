@@ -1,6 +1,6 @@
 <?php
 
-require('models/database.php');
+require('controller/database.php');
 
 
 // Validation du formulaire
@@ -18,11 +18,9 @@ if (isset($_POST['validate'])) {
       $editQuestionOnWebsite = $db->prepare('UPDATE questions SET title = ?, description = ?, content = ? WHERE id = ?');
       $editQuestionOnWebsite->execute(array($new_question_title, $new_question_description, $new_question_content, $idQuestion));
 
-   // Rediriger l'utilisateur vers la page listant les questions
+      // Rediriger l'utilisateur vers la page listant les questions
       header('Location: my-questions.php');
-
    } else {
       $errorMsg = "Veuillez compléter tous les champs ...";
    }
-
 }

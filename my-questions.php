@@ -15,7 +15,7 @@ require('controller/questions/myQuestionsController.php');
    <div class="container">
       <div class="row row-cols-lg-auto g-0">
          <?php while ($question = $getAllMyQuestions->fetch()) { ?>
-            <div class="card me-4 mt-4" style="width:18rem;">
+            <div class="card me-4 mt-4" style="width:20rem;">
                <h5 class="card-header text-center fw-bold text-teal">
                   <?= $question['title']; ?>
                </h5>
@@ -26,6 +26,7 @@ require('controller/questions/myQuestionsController.php');
                   <div class="d-flex justify-content-around">
                      <a href="#" class="btn btn-primary">Lire</a>
                      <a href="edit-question.php?id=<?= $question['id'];?>" class="btn btn-warning">Modifier</a>
+                     <a href="controller/questions/deleteQuestionController.php?id=<?= $question['id'];?>" class="btn btn-danger">Supprimer</a>
                   </div>
                </div>
                <div class="card-footer d-flex justify-content-between">

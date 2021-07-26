@@ -1,7 +1,7 @@
 <?php
 // Se connecter à la base de donnée
 session_start();
-require('models/database.php');
+require('controller/database.php');
 
 // Validation du formulaire
 if (isset($_POST['validate'])) {
