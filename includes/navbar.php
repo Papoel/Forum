@@ -13,6 +13,12 @@
                <a class="nav-link" href="publish-question.php">Publier une question</a>
             </li>
          </ul>
+
+         <ul class="navbar-nav ms-auto me-1">
+            <li class="nav-item">
+               <a class="nav-link text-danger" href="controller/users/logoutController.php">Se déconnecter</a>
+            </li>
+         </ul>
       </div>
    </div>
 </nav>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 // Se connecter à la base de donnée
 require('models/database.php');

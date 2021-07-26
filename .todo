@@ -1,10 +1,27 @@
 DATABASE:
 DB_NAME => forum
    Entity => users:
-      ✔ id INT PRIMARY KEY NOT NULL
+      ✔ id INTEGER PRIMARY KEY NOT NULL AUTOINCREMENT
       ✔ pseudo VARCHAR(50)
       ✔ firstname VARCHAR(100)
       ✔ lastname VARCHAR(100)
       ✔ password TEXT
+   Entity => questions:
+      ✔ id INTEGER PRIMARY KEY NOT NULL AUTOINCREMENT
+      ✔ title VARCHAR(150)
+      ✔ description VARCHAR(255)
+      ✔ content TEXT
+      ✔ id_author INTEGER
+      ✔ id_category INTEGER
+      ✔ pseudo_author VARCHAR(50)
+      ✔ date_publication Text
+   Entity category:
+      ✔ id INTEGER PRIMARY KEY NOT NULL AUTOINCREMENT
+      ✔ name VARCHAR(255)
 
 Utiliser "htmlspecialchars" pour éviter éviter l'injection SQL
+Utiliser nl2br pour autoriser les sauts de ligne lorsqu'une question est posée
+
+Ajouter des fonctions:
+   ☐ Ajouter une catégorie aux questions
+   ☐ Envoie de message privé entre utilisateurs
