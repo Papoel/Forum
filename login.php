@@ -10,9 +10,10 @@
    <form class="container" method="post">
 
       <?php if (isset($errorMsg)) {
-         echo '<div class="alert alert-danger"><b>'
-            . $errorMsg;
-         echo '</b></div>';
+         echo '<div class="alert alert-danger fw-bold">
+               <i class="bi bi-exclamation-triangle me-2 h2"></i>'
+            . $errorMsg .
+            '</div>';
       } ?>
 
       <div class="mb-3">

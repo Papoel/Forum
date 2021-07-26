@@ -1,5 +1,5 @@
 <?php
-require 'controller/questions/editQuestionController.php';
+require 'controller/questions/getInfosOfEditedQuestionController.php';
 require 'controller/users/securityController.php';
 ?>
 
@@ -14,7 +14,10 @@ require 'controller/users/securityController.php';
 
    <div class="container">
       <?php if (isset($errorMsg)) {
-         echo '<div class="alert alert-danger"><b>' . $errorMsg . '</b></div>';
+         echo '<div class="alert alert-danger fw-bold">
+               <i class="bi bi-exclamation-triangle me-2 h2"></i>'
+            . $errorMsg .
+            '</div>';
       } ?>
 
       <?php if (isset($question_date)) { ?>

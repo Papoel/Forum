@@ -2,16 +2,18 @@
 
 require('models/database.php');
 
-// Recupérer les données de la question grace à son id
+// Vérifier si l'id de la question est bien passé en paramètre dans l'url
 if (isset($_GET['id']) && !empty($_GET['id'])) {
 
    $idQuestion = $_GET['id'];
 
+// Vérifier si la question existe
    $checkIfquestionExist = $db->prepare('SELECT * FROM questions WHERE id = ?');
    $checkIfquestionExist->execute(array($idQuestion));
 
    if ($checkIfquestionExist->rowCount() > 0) {
 
+   // Récupérer les données de la question
       $questionsInfos = $checkIfquestionExist->fetch();
       if ($questionsInfos['id_author'] == $_SESSION['id']) {
 
@@ -25,7 +27,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
       }
 
    } else {
-      $errorMsg = "Aucune correspondance avec la question n'a été trouvée.";
+      $errorMsg = "Désolé, il semblerait que cette question n'éxiste pas";
    }
 
 } else {

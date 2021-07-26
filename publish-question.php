@@ -15,9 +15,13 @@ require 'controller/users/securityController.php';
 
       <?php
       if (isset($errorMsg)) {
-         echo '<div class="alert alert-danger"><b>' . $errorMsg . '</b></div>';
+         echo '<div class="alert alert-danger fw-bold">
+               <i class="bi bi-exclamation-triangle me-2 h2"></i>'
+            . $errorMsg . '</div>';
       } elseif (isset($successMsg)) {
-         echo '<div class="alert alert-success"><b>' . $successMsg . '</b></div>';
+         echo '<div class="alert alert-success fw-bold">
+            <i class="bi bi-check2-square me-2 h2"></i>'
+            . $successMsg . '</div>';
       }
       ?>
 
