@@ -2,7 +2,6 @@
 
 require('models/database.php');
 
-var_dump($idQuestion);
 
 // Validation du formulaire
 if (isset($_POST['validate'])) {

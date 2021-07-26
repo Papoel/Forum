@@ -1,6 +1,6 @@
 <?php
-require('controller/questions/myQuestionsController.php');
 require('controller/users/securityController.php');
+require('controller/questions/myQuestionsController.php');
 ?>
 
 <!DOCTYPE html>

@@ -1,7 +1,7 @@
 <?php
-require 'controller/questions/getInfosOfEditedQuestionController.php';
-require 'controller/questions/editQuestionController.php';
 require 'controller/users/securityController.php';
+require 'controller/questions/editQuestionController.php';
+require 'controller/questions/getInfosOfEditedQuestionController.php';
 ?>
 
 <!DOCTYPE html>
