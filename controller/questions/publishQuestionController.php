@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 require('models/database.php');
 
 // var_dump($_SESSION['id'], $_SESSION['pseudo']);

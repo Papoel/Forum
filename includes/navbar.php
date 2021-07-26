@@ -16,12 +16,24 @@
                <a class="nav-link" href="my-questions.php">Mes questions</a>
             </li>
          </ul>
+         <?php
+         if (isset($_SESSION['auth'])) {
+         ?>
+            <ul class="navbar-nav ms-auto me-1">
+               <!-- <ul> -->
+               <li class="nav-item">
+                  <a class="nav-link" href="profile.php?id=<?= $_SESSION['id']; ?>">Mon profil</a>
+               </li>
+               <!--  <ul class="navbar-nav ms-auto me-1"> -->
+               <li class="nav-item">
+                  <a class="nav-link text-danger" href="controller/users/logoutController.php">Se déconnecter</a>
+               </li>
+            </ul>
+         <?php
+         }
+         ?>
 
-         <ul class="navbar-nav ms-auto me-1">
-            <li class="nav-item">
-               <a class="nav-link text-danger" href="controller/users/logoutController.php">Se déconnecter</a>
-            </li>
-         </ul>
+
       </div>
    </div>
 </nav>

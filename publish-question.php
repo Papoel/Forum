@@ -34,7 +34,7 @@ require 'controller/users/securityController.php';
          <textarea type="text" class="form-control" name="content"></textarea>
       </div>
 
-      <button type="submit" class="w-100 btn btn-warning p-2" name="validate">Publier la question</button>
+      <button type="submit" class="w-100 btn btn-success p-2" name="validate">Publier la question</button>
 
    </form>
 

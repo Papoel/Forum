@@ -1,6 +1,6 @@
 <?php
 // Se connecter à la base de donnée
-session_start();
+// session_start();
 require('models/database.php');
 
 // Validation du formulaire
