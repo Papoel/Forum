@@ -15,9 +15,22 @@ DB_NAME => forum
       ✔ id_category INTEGER
       ✔ pseudo_author VARCHAR(50)
       ✔ date_publication Text
-   Entity category:
-      ✔ id INTEGER PRIMARY KEY NOT NULL AUTOINCREMENT
-      ✔ name VARCHAR(255)
+   Entity answer:
+       ✔ id INTEGER PRIMARY KEY NOT NULL AUTOINCREMENT
+       ✔ id_author INTEGER
+       ✔ pseudo_author VARCHAR(50)
+       ✔ id_question INTEGER
+       ✔ content TEXT
+       
+   Code SQL (table answer):
+      CREATE TABLE answers
+      (
+         id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+         id_author INT,
+         pseudo_author VARCHAR(50),
+         id_question INT,
+         content TEXT
+      )
 
 Utiliser "htmlspecialchars" pour éviter éviter l'injection SQL
 Utiliser nl2br pour autoriser les sauts de ligne lorsqu'une question est posée

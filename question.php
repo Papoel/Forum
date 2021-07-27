@@ -1,6 +1,9 @@
 <?php
 session_start();
 require 'controller/questions/showQuestionContentController.php';
+require 'controller/questions/postAnswerController.php';
+require 'controller/questions/showAnswerController.php'
+
 ?>
 
 <!DOCTYPE html>
@@ -24,15 +27,52 @@ require 'controller/questions/showQuestionContentController.php';
 
       if (isset($question_publication_date)) {
       ?>
-         <h3> <?= $question_title; ?> </h3>
+         <section id="show-content">
+            <h3> <?= $question_title; ?> </h3>
+            <hr>
+            <p class="d-inline text-muted">Description : </p>
+            <p class="d-inline"> <?= $question_description; ?> </p>
+            <hr>
+            <p class="d-inline text-muted">Contenu : </p>
+            <p class="d-inline"> <?= $question_content; ?> </p>
+            <hr>
+            <small>
+               <p class="d-inline text-muted">Publié par : </p>
+               <?= $question_pseudo_author . ' le ' . $question_publication_date; ?>
+            </small>
+         </section>
+         <br><br>
          <hr>
-         <p class="d-inline text-muted">Description : </p>
-         <p class="d-inline"> <?= $question_description; ?> </p>
-         <hr>
-         <p class="d-inline text-muted">Contenu : </p>
-         <p class="d-inline"> <?= $question_content; ?> </p>
-         <hr>
-         <small> <?= $question_pseudo_author . ' le ' . $question_publication_date; ?> </small>
+         <section id="show-answers" class="mt-5">
+
+            <form class="form-group" method="post">
+               <div class="mx-5">
+                  <label class="form-label fw-bold h4 p-2">Réponse :</label>
+                  <textarea name="answer" class="form-control"></textarea>
+                  <br>
+                  <button class="btn btn-primary w-75 d-block mx-auto p-2 fs-5" type="submit" name="validate">
+                     Répondre
+                  </button>
+               </div>
+               <br><hr>
+               <?php
+
+               while ($answer = $getAllAnswersofQuestion->fetch()) {
+               ?>
+                  <div class="card mx-5">
+                     <div class="card-header">
+                        <?= $answer['pseudo_author'] ?>
+                     </div>
+                     <div class="card-body">
+                        <?= $answer['content'] ?>
+                     </div>
+                  </div>
+                  <br>
+               <?php
+               }
+               ?>
+            </form>
+         </section>
       <?php
       }
 

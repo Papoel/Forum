@@ -6,11 +6,11 @@ require('controller/database.php');
 if (isset($_GET['id']) and !empty($_GET['id'])) {
 
    //Récupérer l'identifiant de la question
-   $idOfTheQuestion = $_GET['id'];
+   $idQuestion = $_GET['id'];
 
    //Vérifier si la question existe
    $checkIfQuestionExists = $db->prepare('SELECT * FROM questions WHERE id = ?');
-   $checkIfQuestionExists->execute(array($idOfTheQuestion));
+   $checkIfQuestionExists->execute(array($idQuestion));
 
    if ($checkIfQuestionExists->rowCount() > 0) {
 
