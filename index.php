@@ -1,5 +1,5 @@
 <?php
-session_start();
+require('controller/users/securityController.php');
 require('controller/questions/showAllQuestionController.php');
 ?>
 
@@ -41,7 +41,10 @@ require('controller/questions/showAllQuestionController.php');
             </div>
 
             <div class="card-footer">
-               Publié par <?= $question['pseudo_author']; ?> le <?= $question['date_publication']; ?>
+               Publié par 
+               <a href="profile.php?id=<?=$question['id_author'];?>"><?=$question['pseudo_author'];?></a> 
+               le 
+               <?= $question['date_publication']; ?>
             </div>
 
          </div>

@@ -1,5 +1,5 @@
 <?php
-session_start();
+require 'controller/users/securityController.php';
 require 'controller/questions/showQuestionContentController.php';
 require 'controller/questions/postAnswerController.php';
 require 'controller/questions/showAnswerController.php'
@@ -36,10 +36,12 @@ require 'controller/questions/showAnswerController.php'
             <p class="d-inline text-muted">Contenu : </p>
             <p class="d-inline"> <?= $question_content; ?> </p>
             <hr>
-            <small>
-               <p class="d-inline text-muted">Publié par : </p>
-               <?= $question_pseudo_author . ' le ' . $question_publication_date; ?>
-            </small>
+            <p class="d-inline">
+               Publié par
+               <a href="profile.php?id=<?= $question_id_author; ?>"><?= $question_pseudo_author; ?></a>
+               le
+               <?= $question_publication_date; ?>
+            </p>
          </section>
          <br><br>
          <hr>
@@ -54,7 +56,8 @@ require 'controller/questions/showAnswerController.php'
                      Répondre
                   </button>
                </div>
-               <br><hr>
+               <br>
+               <hr><br>
                <?php
 
                while ($answer = $getAllAnswersofQuestion->fetch()) {
