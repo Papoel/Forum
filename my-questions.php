@@ -24,9 +24,9 @@ require('controller/questions/myQuestionsController.php');
                      <?= $question['description']; ?>
                   </p>
                   <div class="d-flex justify-content-around">
-                     <a href="#" class="btn btn-primary">Lire</a>
-                     <a href="edit-question.php?id=<?= $question['id'];?>" class="btn btn-warning">Modifier</a>
-                     <a href="controller/questions/deleteQuestionController.php?id=<?= $question['id'];?>" class="btn btn-danger">Supprimer</a>
+                     <a href="question.php?id=<?= $question['id']; ?>" class="btn btn-primary">Lire</a>
+                     <a href="edit-question.php?id=<?= $question['id']; ?>" class="btn btn-warning">Modifier</a>
+                     <a href="controller/questions/deleteQuestionController.php?id=<?= $question['id']; ?>" class="btn btn-danger">Supprimer</a>
                   </div>
                </div>
                <div class="card-footer d-flex justify-content-between">

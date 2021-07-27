@@ -21,8 +21,8 @@ if (isset($_GET['id']) and !empty($_GET['id'])) {
    if ($checkIfquestionExist->rowCount() > 0) {
 
    // Récupérer les infos de la question
-      $usersInfo = $checkIfquestionExist->fetch();
-      if ($usersInfo['id_author'] == $_SESSION['id']) {
+      $questionInfos = $checkIfquestionExist->fetch();
+      if ($questionInfos['id_author'] == $_SESSION['id']) {
 
       // Supprimer la question en fonction de son id rentré en paramètre
          $deleteThisQuestion = $db->prepare('DELETE FROM questions WHERE id = ?');
