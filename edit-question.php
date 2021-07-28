@@ -1,7 +1,7 @@
 <?php
 require 'controller/users/securityController.php';
-require 'controller/questions/editQuestionController.php';
 require 'controller/questions/getInfosOfEditedQuestionController.php';
+require 'controller/questions/editQuestionController.php';
 ?>
 
 <!DOCTYPE html>
@@ -39,9 +39,8 @@ require 'controller/questions/getInfosOfEditedQuestionController.php';
             <button type="submit" class="w-100 btn btn-warning p-2" name="validate">Modifier la question</button>
 
          </form>
-      <?php
-      }
-      ?>
-
-
+      <?php } ?>
    </div>
+</body>
+
+</html>

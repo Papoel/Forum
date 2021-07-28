@@ -14,12 +14,12 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
    if ($checkIfquestionExist->rowCount() > 0) {
 
       // Récupérer les données de la question
-      $questionsInfos = $checkIfquestionExist->fetch();
-      if ($questionsInfos['id_author'] == $_SESSION['id']) {
+      $questionInfos = $checkIfquestionExist->fetch();
+      if ($questionInfos['id_author'] == $_SESSION['id']) {
 
-         $question_title       = $questionsInfos['title'];
-         $question_description = $questionsInfos['description'];
-         $question_content     = $questionsInfos['content'];
+         $question_title       = $questionInfos['title'];
+         $question_description = $questionInfos['description'];
+         $question_content     = $questionInfos['content'];
 
          // Supprimer l'affichage des balises <br />
          $question_description = str_replace('<br />', '', $question_description);

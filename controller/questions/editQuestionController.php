@@ -7,7 +7,7 @@ require('controller/database.php');
 if (isset($_POST['validate'])) {
 
    // Vérifer si l'itilisateur a completer tous les chmaps
-   if (!empty($_POST['title']) and !empty($_POST['description']) and !empty($_POST['content'])) {
+   if (!empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['content'])) {
 
       // Donnée à faire passer dans la requête
       $new_question_title = htmlspecialchars($_POST['title']);
