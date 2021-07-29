@@ -32,7 +32,10 @@ require('controller/questions/showAllQuestionController.php');
             <div class="card-header">
                <div class="me-auto d-flex justify-content-between">
                   <?= $question['title']; ?>
-                  <a class="mx-3 btn btn-sm btn-outline-primary px-3" href="question.php?id=<?= $question['id']; ?>">Lire</a>
+                  <a class="mx-3 btn btn-sm btn-outline-primary px-3" 
+                     href="question.php?id=<?= $question['id']; ?>">
+                        Lire
+                  </a>
                </div>
             </div>
 

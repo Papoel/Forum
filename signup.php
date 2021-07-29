@@ -22,8 +22,8 @@
    <main class="form-signin">
 
       <form method="POST">
-         <img class="d-block mx-auto mb-4" src="assets/logo.jpg" alt="" width="72" height="72">
-         <h1 class="text-center h3 mb-3 fw-normal">Inscrivez-vous</h1>
+         <img class="d-block mx-auto mb-4" src="assets/bridevproject-logo.png" alt="" width="72" height="72">
+         <h1 class="text-center text-title-color h3 mb-3 fw-bold">Inscrivez-vous</h1>
 
          <div class="form-floating">
             <input type="text" class="form-control" id="floatingInput" placeholder="votre pseudo" name="pseudo">
@@ -51,16 +51,17 @@
             <label for="floatingPassword">Mot de passe</label>
          </div>
 
-         <button class="w-100 btn btn-lg btn-info" type="submit" name="validate">S'inscrire</button>
+         <button class="w-100 btn btn-lg btn-success" type="submit" name="validate">S'inscrire</button>
 
-         <div class="form-account-exist mt-2">
-            <a href="login.php">
-               <p>Je n'ai pas de compte, creer un compte</p>
+         <div class="form-account-exist">
+            <span>J'ai déjà un compte,</span>
+            <a class="account" href="login.php">
+               <b>me connecter.</b>
             </a>
          </div>
 
          <div class="form-footer-mentions">
-            <p class="mt-5 mb-3 text-muted">
+            <p class="text-muted">
                &copy; BriDevProject pour Technisonic
                - Tous droits réservés.
                <?= date('Y'); ?>
